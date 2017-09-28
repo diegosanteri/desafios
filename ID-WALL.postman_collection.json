@@ -1,0 +1,341 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ID-WALL",
+		"_postman_id": "50565ef7-afb0-9251-5f54-237ef6261f46",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "strings",
+			"description": "",
+			"item": [
+				{
+					"name": "Texto 3 nivel basico",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3001/results?test=text_3&type=basic&rowSize=40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"results"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "text_3",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "type",
+									"value": "basic",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "rowSize",
+									"value": "40",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rowSize\": 40\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Texto 3 nivel intermediario",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3001/results?test=text_3&type=intermediary&rowSize=40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"results"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "text_3",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "type",
+									"value": "intermediary",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "rowSize",
+									"value": "40",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rowSize\": 40\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Texto 2 nivel intermediario",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3001/results?test=text_2&type=intermediary&rowSize=40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"results"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "text_2",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "type",
+									"value": "intermediary",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "rowSize",
+									"value": "40",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rowSize\": 40\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Texto 2 nivel basico",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3001/results?test=text_2&type=basic&rowSize=40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"results"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "text_2",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "type",
+									"value": "basic",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "rowSize",
+									"value": "40",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rowSize\": 40\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Test default nivel basico",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3001/results?rowSize=40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"results"
+							],
+							"query": [
+								{
+									"key": "rowSize",
+									"value": "40",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rowSize\": 40\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Test default nivel intermediario",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3001/results?type=intermediary&rowSize=40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"results"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "intermediary",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "rowSize",
+									"value": "40",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rowSize\": 40\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "crawler",
+			"description": "",
+			"item": [
+				{
+					"name": "Get reddits API",
+					"request": {
+						"url": {
+							"raw": "localhost:3002/api/subreddits?list=askreddit;cats",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"subreddits"
+							],
+							"query": [
+								{
+									"key": "list",
+									"value": "askreddit;cats",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

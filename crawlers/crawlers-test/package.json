@@ -1,0 +1,29 @@
+{
+  "name": "crawlers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/loader.js",
+  "scripts": {
+    "dev": "nodemon",
+    "production": "node src/loader.js",
+    "test": "mocha -t 30000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "node-horseman": "^3.3.0",
+    "node-telegram-bot-api": "^0.28.0",
+    "numeral": "^2.0.6",
+    "phantomjs": "^2.1.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0",
+    "nodemon": "*"
+  }
+}

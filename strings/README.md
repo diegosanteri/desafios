@@ -1,35 +1,27 @@
-# Desafio 1: Strings
+# Desafio 1: String
+Para um maior entendimento pode-se importar o postman contido na raiz desse projeto, chamado de ID-WALL.postman_collection.
 
-Após ler o coding style do kernel Linux, você descobre a mágica que é 
-ter linhas de código com no máximo 80 caracteres cada uma.
+O Projeto está utilizando docker, para roda-lo é necessario gerar uma imagem, para isso rode o seguinte comando: 
+    - --Criar imagem - docker build -t "string-test" .
+    - --Criar Container - docker run -d -p 3001:3001 --name string-test string-test .
+    - --Rodar projeto - docker start string-test .
 
-Assim, você decide que de hoje em diante seus e-mails enviados também 
-seguirão um padrão parecido e resolve desenvolver um plugin para te ajudar
-com isso. Contudo, seu plugin aceitará no máximo 40 caracteres por linha.
+Basta realizar as chamadas realiadas no postman e obter os valores desejados.
 
-Implemente uma função que receba: 
-1. um texto qualquer e 
-2. um limite de
-comprimento e seja capaz de gerar os outputs dos desafios abaixo.
 
-## Exemplo input
+### Parte 1
+Para formatar o texto de forma basica basta passar o seguinte comando:
+    http://localhost:3001/results?type=basic&rowSize=40
+Existem outros dois arquivos, para acessa-los basta chamar:
+    http://localhost:3001/results?test=text_2&type=basic&rowSize=40
+    http://localhost:3001/results?test=text_3&type=basic&rowSize=40
 
-`In the beginning God created the heavens and the earth. Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.`
 
-`And God said, "Let there be light," and there was light. God saw that the light was good, and he separated the light from the darkness. God called the light "day," and the darkness he called "night." And there was evening, and there was morning - the first day.`
+### Parte 2
+Para formatar o texto de forma justificada basta passar o seguinte comando:
+    http://localhost:3001/results?type=intermediary&rowSize=40
+Existem outros dois arquivos, para acessa-los basta chamar:
+    http://localhost:3001/results?test=text_2&type=intermediary&rowSize=40
+    http://localhost:3001/results?test=text_3&type=intermediary&rowSize=40
 
-O texto deve ser parametrizável e se quiser, pode utilizar um texto de input de sua preferência.
 
-### Parte 1 (Básico) - limite 40 caracteres
-Você deve seguir o exemplo de output [deste arquivo](https://github.com/idwall/desafios/blob/master/strings/output_parte1.txt), onde basta o texto possuir, no máximo, 40 caracteres por linha. As palavras não podem ser quebraadas no meio.
-
-### Parte 2 (Intermediário) - limite 40 caracteres
-O exemplo de output está [neste arquivo](https://github.com/idwall/desafios/blob/master/strings/output-parte2.txt), onde além de o arquivo possuir, no máximo, 40 caracteres por linha, o texto deve estar **justificado**.
-
-### Extras
-
-- Tratamento de erros e exceções. Fica a seu critério quais casos deseja tratar e como serão tratados.
-- Testes unitários ou de integração.
-- Uso do Docker.
-- Parametrização da quantidade de caracteres por linha.
-- Utilizar as versões mais atuais da linguagem que escolher para desenvolver (JavaScript ES6+; Java 8; Python 3, etc).

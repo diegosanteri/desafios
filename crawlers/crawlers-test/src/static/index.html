@@ -1,0 +1,110 @@
+<html lang="en">
+
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Reddits</title>
+        <meta name="generator" content="Bootply">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Portfolio grid items example Bootstrap 2">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
+        <style type="text/css">
+            #reddits_list {
+                margin-left: 10%;
+            }
+            #reddits_list .box {
+                margin-bottom: 20px;
+                min-height: 90px;
+                line-height: 25px; 
+            }
+            .thumbnail{
+                height: 50%;
+            }
+            #subreddits {
+                width: 100%;
+                height: 4%;
+            }
+            .center_div{
+                margin: 0 auto;
+                width:30% /* value of your choice which suits your alignment */
+            }
+            .break-word {
+                width: 420px;
+                overflow-wrap: break-word;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <hr>
+        <div class="well">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <h1>List Sub Reddits</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="center_div">
+                <form class="center" href="#">
+                        <label for="formGroupExampleInput">Subreddits</label>
+                        <input type="text" class="form-control" id="subreddits" placeholder="cats;Brazil;dogs"/><br/>
+                        <button type="button" class="btn btn-success btn-block" id="subredditSearch">Search</button>
+                </form>
+            </div>
+            <div id="reddits_list">
+            </div>
+        </div>
+
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $( "#subredditSearch" ).click(function() {
+                    const subreddits = $("#subreddits").val()
+                    if (!subreddits) {
+                        return alert("Insert one or more subreddits");
+                    }
+
+                    $("#reddits_list").html("")
+                    axios.get(`/api/subreddits?list=${subreddits}`)
+                            .then(function (response) {
+                                var div = ""
+
+                                response.data.forEach((threads) => {
+                                    if(threads.length > 0) {
+                                        threads.forEach((thread)=>{
+                                            div += `<div class="span box">
+                                                        <div class="thumbnail">
+                                                            <div class="caption">
+                                                                <span class="label label-default">Ranking</span><p class="break-word">${thread.rank}</p>
+                                                                <span class="label label-default">Title</span><p class="break-word">${thread.title}</p>
+                                                                <span class="label label-default">UP Votes</span><p class="break-word">${thread.upvotes}</p>
+                                                                <span class="label label-default">Comments</span><p class="break-word"><a href="${thread.commentsUrl}">comments<a/></p>
+                                                                <span class="label label-default">Post URL</span><p class="break-word"><a href="${thread.postUrl}">url<a/></p>
+                                                                <span class="label label-default">SUbreddit</span><p class="break-word">${thread.subreddit}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>`
+                                        })
+                                    }
+                                });
+                                $("#reddits_list").append(div)
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                            });
+                });
+            });
+        </script>
+    </body>
+
+</html>
