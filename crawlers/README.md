@@ -2,10 +2,10 @@
 Para um maior entendimento pode-se importar o postman contido na raiz desse projeto, chamado de ID-WALL.postman_collection.
 
 O Projeto está utilizando docker, para roda-lo é necessario gerar uma imagem, para isso rode o seguinte comando: 
-    - --Criar imagem - docker build -t "crawler-test" .
-    - --Criar Container - docker run -d -p 3002:3002 --name crawler-test crawler-test
-    - --Rodar projeto - docker start crawler-test .
-    - --Acess agora - localhost:3002
+    - `--Criar imagem` - docker build -t "crawler-test" .
+    - `--Criar Container` - docker run -d -p 3002:3002 --name crawler-test crawler-test
+    - `--Rodar projeto` - docker start crawler-test .
+    - `--Acess agora` - localhost:3002
 
 
 ### Parte 1
